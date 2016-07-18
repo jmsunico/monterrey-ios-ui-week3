@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="10032"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="aw_imc_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group width="130" alignment="left" id="QQ1-ca-z2v">
+                            <items>
+                                <label width="62.5" alignment="left" text="Weight:" id="kfx-om-9Yx"/>
+                                <label width="44.5" alignment="left" text="Label" textAlignment="right" id="APC-mF-dew"/>
+                            </items>
+                        </group>
+                        <slider width="1" alignment="left" value="70" minimum="1" maximum="201" steps="200" id="aws-0c-ykG">
+                            <connections>
+                                <action selector="weightSlider:" destination="AgC-eL-Hgc" id="n3F-2d-lWa"/>
+                            </connections>
+                        </slider>
+                        <group width="1" alignment="left" id="g3R-iv-g2h">
+                            <items>
+                                <label width="63.5" alignment="left" text="Height:" id="Mpp-Ln-nM4"/>
+                                <label width="41.5" alignment="left" text="Label" textAlignment="right" id="wIC-WZ-TJP"/>
+                            </items>
+                        </group>
+                        <slider width="1" alignment="left" value="170" minimum="1" maximum="241" steps="240" id="0eY-UC-nol">
+                            <connections>
+                                <action selector="heightSlider:" destination="AgC-eL-Hgc" id="lAt-Ab-o9D"/>
+                            </connections>
+                        </slider>
+                        <button width="1" alignment="left" title="Obtain IMC" id="uvN-QP-cxo">
+                            <connections>
+                                <action selector="obtainIMCButton" destination="AgC-eL-Hgc" id="RL7-cm-Nql"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="heightValue" destination="wIC-WZ-TJP" id="5HK-dV-lCd"/>
+                        <outlet property="obtainIMC" destination="uvN-QP-cxo" id="iv6-4v-lIb"/>
+                        <outlet property="weightValue" destination="APC-mF-dew" id="FHy-ob-E5j"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="305" y="427.25"/>
+        </scene>
+        <!--ResultsController-->
+        <scene sceneID="OrX-tX-X0h">
+            <objects>
+                <controller identifier="ResultsController" id="cNl-cb-p8z" customClass="ResultsInterfaceController" customModule="aw_imc_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="Your IMC is:" id="0zK-Bj-p2g"/>
+                        <label alignment="left" text="Label" id="Lq3-lV-9NQ"/>
+                    </items>
+                    <connections>
+                        <outlet property="obtainedIMC" destination="Lq3-lV-9NQ" id="01J-1a-E8E"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="306" y="713"/>
+        </scene>
+    </scenes>
+</document>
